@@ -43,25 +43,23 @@
 ### Main idea of On-Demand Multimodal Understanding
 
 <p align="center" width="100%">
-<img src="https://oryx-mllm.github.io/static/images/teaser.png" alt="teaser.png" width=80%>
+<img src="https://oryx-mllm.github.io/static/images/teaser.png" alt="teaser.png" width=90%>
 </p>
 <div>
 
 ### Overview of Oryx Architecture
 
 <p align="center" width="100%">
-<img src="https://oryx-mllm.github.io/static/images/method.png" alt="method.png" width=80%>
+<img src="https://oryx-mllm.github.io/static/images/method.png" alt="method.png" width=90%>
 </p>
 <div>
 
-` 
-
 ## TODO List
 
- - [x] ~~Release all the model weights.~~
- - [x] ~~Release OryxViT model.~~
- - [x] ~~Demo code for generation.~~
- - [x] ~~All the training and inference code.~~
+ - [x] Release all the model weights.
+ - [x] Release OryxViT model.
+ - [x] Demo code for generation.
+ - [x] All the training and inference code.
  - [ ] Evaluation code for image, video and 3D multi-modal benchmark.
  - [ ] Oryx SFT Data.
  - [ ] Oryx chatbox. 
