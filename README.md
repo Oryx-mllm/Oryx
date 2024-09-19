@@ -70,11 +70,13 @@
 
 You can try the generation results of our strong Oryx model with the following steps: 
 
-#### 1. Download the [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) vision encoder first.
+#### 1. Download the [Oryx](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) model from our huggingface collections. 
 
-#### 2. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT. (We will simplify step 1 and 2 in an automatically manner soon.)
+#### 2. Download the [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) vision encoder.
 
-#### 3. run the inference script with your own video to test our model.
+#### 3. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT. (We will simplify step 1, 2 and 3 in an automatically manner soon.)
+
+#### 4. Modify the model path and run the inference script with your own video to test our model.
 
 ```python
 python inference.py
