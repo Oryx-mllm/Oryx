@@ -108,7 +108,7 @@ pip install -e
 
 ### Training
 
-#### 4. **Training your own model: **
+#### 4. **Training your own model:**
 
 Modify the following lines in the scripts at your own environments:
 
@@ -140,6 +140,6 @@ If you find it useful for your research and applications, please cite our paper 
 
 ## Acknowledgement
 
-- Our codebase is conducted on [LLaVA Team](https://github.com/LLaVA-VL/LLaVA-NeXT)
+- Our codebase is conducted on [LLaVA](https://github.com/LLaVA-VL/LLaVA-NeXT)
 
 - Thanks to [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) team, for building such a usefule evaluation system!
