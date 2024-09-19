@@ -1,0 +1,9 @@
+dataset_path: /mnt/lzy/video_data/save_data/perceptiontest_val
+dataset_kwargs:
+  token: True
+  video: True
+  cache_dir: perceptiontest_val
+model_specific_prompt_kwargs:
+  default:
+    pre_prompt: ""
+    post_prompt: "Answer with the option's letter from the given choices directly."
