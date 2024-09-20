@@ -1,0 +1,8 @@
+pyproject.toml
+setup.py
+lmms_eval.egg-info/PKG-INFO
+lmms_eval.egg-info/SOURCES.txt
+lmms_eval.egg-info/dependency_links.txt
+lmms_eval.egg-info/entry_points.txt
+lmms_eval.egg-info/requires.txt
+lmms_eval.egg-info/top_level.txt

@@ -165,7 +165,7 @@ def eval_model(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-path", type=str, default="/home/checkpoints/oryx-7b")
+    parser.add_argument("--model-path", type=str, default="")
     parser.add_argument("--model-base", type=str, default=None)
     parser.add_argument("--frames-upbound", type=int, default=64)
     parser.add_argument("--temperature", type=float, default=0.2)

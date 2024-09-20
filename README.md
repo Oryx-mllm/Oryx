@@ -23,7 +23,7 @@
 
 **Project Page:** [![oryx-project-page](https://img.shields.io/badge/oryx-project_page-red)](https://oryx-mllm.github.io) 
 
-**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/2409.12961) 
+**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/xxxx.xxxx) 
 
 **Model Checkpoints**: [![oryx-checkpoints](https://img.shields.io/badge/oryx-checkpoints-blue)](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) 
 
@@ -32,7 +32,7 @@
 ## 📢 News
 
 - [20/09/2024] 🔥 **🚀Introducing [Oryx](https://oryx-mllm.github.io)!** The Oryx models (7B/34B) support **on-demand visual perception**, achieve new state-of-the-art performance across image, video and 3D benchmarks, even surpassing advanced commercial models on some benchmarks.
-  * [[Paper]](https://arxiv.org/abs/2409.12961): Detailed introduction of on-demand visual perception, including **native resolution perception** and **dynamic compressor**! 
+  * [[Paper]](https://arxiv.org/abs/xxxx.xxxx): Detailed introduction of on-demand visual perception, including **native resolution perception** and **dynamic compressor**! 
   * [[Checkpoints]](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff): Try our advanced model on your own.
   * [[Scripts]](https://github.com/Oryx-mllm/oryx/blob/main/scripts): Start training models with customized data.
 
@@ -60,7 +60,7 @@
  - [x] Release OryxViT model.
  - [x] Demo code for generation.
  - [x] All the training and inference code.
- - [ ] Evaluation code for image, video and 3D multi-modal benchmark.
+ - [x] Evaluation code for image, video and 3D multi-modal benchmark.
  - [ ] Oryx SFT Data.
  - [ ] Oryx chatbox. 
  - [ ] Enhanced Oryx model with latest LLM base models and better SFT data.
@@ -81,6 +81,30 @@ You can try the generation results of our strong Oryx model with the following s
 ```python
 python inference.py
 ```
+
+## Evaluation
+
+You can evaluate our model with the following steps:
+#### 1. Download the [Oryx](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) model from our huggingface collections. 
+
+#### 2. Download the [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) vision encoder.
+
+#### 3. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT. (We will simplify step 1, 2 and 3 in an automatically manner soon.)
+
+#### 4. Install the provided lmms-eval folder.
+
+```python
+cd ./lmms-eval
+pip install -e .
+```
+
+#### 4. Modify the model path and run the evaluation script to test our model.
+
+```python
+bash ./scripts/eval_image.sh
+bash ./scripts/eval_video.sh
+```
+
 
 ## Training Instructions
 
@@ -108,7 +132,7 @@ pip install -e
 
 ### Training
 
-#### 4. **Training your own model:**
+#### 4. **Training your own model: **
 
 Modify the following lines in the scripts at your own environments:
 
@@ -135,16 +159,11 @@ bash scripts/train_oryx_34b.sh
 
 If you find it useful for your research and applications, please cite our paper using this BibTeX:
 ```bibtex
-@article{liu2024oryx,
-title={Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution},
-author={Liu, Zuyan and Dong, Yuhao and Liu, Ziwei and Hu, Winston and Lu, Jiwen and Rao, Yongming},
-journal={arXiv preprint arXiv:2409.12961},
-year={2024}
-}
+
 ```
 
 ## Acknowledgement
 
-- Our codebase is conducted on [LLaVA](https://github.com/LLaVA-VL/LLaVA-NeXT)
+- Our codebase is conducted on [LLaVA Team](https://github.com/LLaVA-VL/LLaVA-NeXT)
 
 - Thanks to [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) team, for building such a usefule evaluation system!

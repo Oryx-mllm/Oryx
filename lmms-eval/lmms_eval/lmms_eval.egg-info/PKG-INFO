@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: lmms_eval
+Version: 0.2.0
+Summary: A framework for evaluating large multi-modality language models
+Author-email: LMMMs-Lab Evaluation Team <lmms_eval@outlook.com>
+License: MIT
+Project-URL: Homepage, https://lmms-lab.github.io/lmms-eval-blog/
+Project-URL: Repository, https://github.com/EvolvingLMMs-Lab/lmms-eval
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: accelerate>=0.29.1
+Requires-Dist: black==24.1.0
+Requires-Dist: datasets==2.16.1
+Requires-Dist: evaluate>=0.4.0
+Requires-Dist: httpx
+Requires-Dist: jsonlines
+Requires-Dist: numexpr
+Requires-Dist: peft>=0.2.0
+Requires-Dist: pybind11>=2.6.2
+Requires-Dist: pytablewriter
+Requires-Dist: rouge-score>=0.0.4
+Requires-Dist: sacrebleu>=1.5.0
+Requires-Dist: scikit-learn>=0.24.1
+Requires-Dist: sqlitedict
+Requires-Dist: openai>=1.0.0
+Requires-Dist: yt-dlp
+Requires-Dist: google-generativeai
+Requires-Dist: pycocoevalcap
+Requires-Dist: tqdm-multiprocess
+Requires-Dist: transformers>=4.37.2
+Requires-Dist: transformers-stream-generator
+Requires-Dist: zstandard
+Requires-Dist: pillow
+Requires-Dist: pyyaml
+Requires-Dist: sympy
+Requires-Dist: mpmath
+Requires-Dist: Jinja2
+Requires-Dist: openpyxl
+Requires-Dist: Levenshtein
+Requires-Dist: hf_transfer
+Requires-Dist: tenacity
+Requires-Dist: wandb>=0.16.0
+Requires-Dist: tiktoken
+Requires-Dist: pre-commit
+Requires-Dist: pydantic
+Requires-Dist: packaging
+Requires-Dist: decord
+Requires-Dist: zss
+Requires-Dist: pywsd
