@@ -60,7 +60,7 @@
  - [x] Release OryxViT model.
  - [x] Demo code for generation.
  - [x] All the training and inference code.
- - [ ] Evaluation code for image, video and 3D multi-modal benchmark.
+ - [x] Evaluation code for image, video and 3D multi-modal benchmark.
  - [ ] Oryx SFT Data.
  - [ ] Oryx chatbox. 
  - [ ] Enhanced Oryx model with latest LLM base models and better SFT data.
@@ -80,6 +80,22 @@ You can try the generation results of our strong Oryx model with the following s
 
 ```python
 python inference.py
+```
+
+## Evaluation
+You can evaluate our model with the following steps:
+#### 1. Download the [Oryx](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) model from our huggingface collections. 
+#### 2. Download the [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) vision encoder.
+#### 3. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT. (We will simplify step 1, 2 and 3 in an automatically manner soon.)
+#### 4. Install the provided lmms-eval folder.
+```python
+cd ./lmms-eval
+pip install -e .
+```
+#### 4. Modify the model path and run the evaluation script to test our model.
+```python
+bash ./scripts/eval_image.sh
+bash ./scripts/eval_video.sh
 ```
 
 ## Training Instructions
