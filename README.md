@@ -23,7 +23,7 @@
 
 **Project Page:** [![oryx-project-page](https://img.shields.io/badge/oryx-project_page-red)](https://oryx-mllm.github.io) 
 
-**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/xxxx.xxxx) 
+**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/2409.12961) 
 
 **Model Checkpoints**: [![oryx-checkpoints](https://img.shields.io/badge/oryx-checkpoints-blue)](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) 
 
@@ -32,7 +32,7 @@
 ## 📢 News
 
 - [20/09/2024] 🔥 **🚀Introducing [Oryx](https://oryx-mllm.github.io)!** The Oryx models (7B/34B) support **on-demand visual perception**, achieve new state-of-the-art performance across image, video and 3D benchmarks, even surpassing advanced commercial models on some benchmarks.
-  * [[Paper]](https://arxiv.org/abs/xxxx.xxxx): Detailed introduction of on-demand visual perception, including **native resolution perception** and **dynamic compressor**! 
+  * [[Paper]](https://arxiv.org/abs/2409.12961): Detailed introduction of on-demand visual perception, including **native resolution perception** and **dynamic compressor**! 
   * [[Checkpoints]](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff): Try our advanced model on your own.
   * [[Scripts]](https://github.com/Oryx-mllm/oryx/blob/main/scripts): Start training models with customized data.
 
@@ -135,7 +135,12 @@ bash scripts/train_oryx_34b.sh
 
 If you find it useful for your research and applications, please cite our paper using this BibTeX:
 ```bibtex
-
+@article{liu2024oryx,
+title={Oryx MLLM: On-Demand Spatial-Temporal Understanding at Arbitrary Resolution},
+author={Liu, Zuyan and Dong, Yuhao and Liu, Ziwei and Hu, Winston and Lu, Jiwen and Rao, Yongming},
+journal={arXiv preprint arXiv:2409.12961},
+year={2024}
+}
 ```
 
 ## Acknowledgement
