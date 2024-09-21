@@ -71,21 +71,21 @@
 ### Results on General Temporal Understanding
 
 <p align="center" width="100%">
-<img src="https://oryx-mllm.github.io/static/images/results1.png" alt="results1.png" width=70%>
+<img src="https://oryx-mllm.github.io/static/images/results1.png" alt="results1.png" width=80%>
 </p>
 <div>
 
 ### Results on Long-Form Temporal Understanding
 
 <p align="center" width="100%">
-<img src="https://oryx-mllm.github.io/static/images/results2.png" alt="results2.png" width=70%>
+<img src="https://oryx-mllm.github.io/static/images/results2.png" alt="results2.png" width=80%>
 </p>
 <div>
 
 ### Results on Image Understanding
 
 <p align="center" width="100%">
-<img src="https://oryx-mllm.github.io/static/images/results3.png" alt="results3.png" width=70%>
+<img src="https://oryx-mllm.github.io/static/images/results3.png" alt="results3.png" width=80%>
 </p>
 <div>
 
@@ -93,7 +93,7 @@
 
 
 <p align="center" width="100%">
-<img src="https://oryx-mllm.github.io/static/images/results4.png" alt="results4.png" width=70%>
+<img src="https://oryx-mllm.github.io/static/images/results4.png" alt="results4.png" width=80%>
 </p>
 <div>
 
