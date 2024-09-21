@@ -36,7 +36,7 @@
   * [[Checkpoints]](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff): Try our advanced model on your own.
   * [[Scripts]](https://github.com/Oryx-mllm/oryx/blob/main/scripts): Start training models with customized data.
 
-## Introducing Oryx
+## 🎉 Introducing Oryx
 
 **Oryx is a unified multimodal architecture for the spatial-temporal understanding of images, videos, and multi-view 3D scenes. Oryx offers an on-demand solution to seamlessly and efficiently process visual inputs with arbitrary spatial sizes and temporal lengths. Our model achieve strong capabilities in image, video, and 3D multimodal understanding simultaneously.**
 
@@ -54,7 +54,7 @@
 </p>
 <div>
 
-## TODO List
+## ✅ TODO List
 
  - [x] Release all the model weights.
  - [x] Release OryxViT model.
@@ -62,9 +62,50 @@
  - [x] All the training and inference code.
  - [x] Evaluation code for image, video and 3D multi-modal benchmark.
  - [ ] Oryx SFT Data.
- - [ ] Oryx chatbox. 
+ - [ ] Oryx Gradio chatbox. 
  - [ ] Enhanced Oryx model with latest LLM base models and better SFT data.
  - [ ] Introducing our explorations for OryxViT.
+
+## 📃 Main Results
+
+### Results on General Temporal Understanding
+
+<p align="center" width="100%">
+<img src="https://oryx-mllm.github.io/static/images/results1.png" alt="results1.png" width=70%>
+</p>
+<div>
+
+### Results on Long-Form Temporal Understanding
+
+<p align="center" width="100%">
+<img src="https://oryx-mllm.github.io/static/images/results2.png" alt="results2.png" width=70%>
+</p>
+<div>
+
+### Results on Image Understanding
+
+<p align="center" width="100%">
+<img src="https://oryx-mllm.github.io/static/images/results3.png" alt="results3.png" width=70%>
+</p>
+<div>
+
+### Results on 3D Understanding
+
+
+<p align="center" width="100%">
+<img src="https://oryx-mllm.github.io/static/images/results4.png" alt="results4.png" width=70%>
+</p>
+<div>
+
+## Model Zoo
+
+We provide our checkpoints at [Huggingface](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff)
+
+| Model | Link | Size | Visual Encoder | LLM-Type | Intermidiate Model 
+|:---:|:---:|:---:|:---:|:---:| :---:| 
+Oryx-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2-7B](https://huggingface.co/Qwen/Qwen2-7B) | [Oryx-7B-Image](https://huggingface.co/THUdyh/Oryx-7B-Image)
+Oryx-34B | [Huggingface](https://huggingface.co/THUdyh/Oryx-34B) | 34B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Yi-1.5-34B](https://huggingface.co/01-ai/Yi-1.5-34B) | [Oryx-34B-Image](https://huggingface.co/THUdyh/Oryx-34B-Image)
+
 
 ## Generation Demo
 
