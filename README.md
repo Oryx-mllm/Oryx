@@ -31,6 +31,7 @@
 
 ## 📢 News
 
+- [23/09/2024] 🔥 **Oryx** ranks 1st on [MLVU](https://github.com/JUNJIE99/MLVU?tab=readme-ov-file#trophy-mini-leaderboard), surpassing GPT-4o. Stay tuned for more results!
 - [20/09/2024] 🔥 **🚀Introducing [Oryx](https://oryx-mllm.github.io)!** The Oryx models (7B/34B) support **on-demand visual perception**, achieve new state-of-the-art performance across image, video and 3D benchmarks, even surpassing advanced commercial models on some benchmarks.
   * [[Paper]](https://arxiv.org/abs/2409.12961): Detailed introduction of on-demand visual perception, including **native resolution perception** and **dynamic compressor**! 
   * [[Checkpoints]](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff): Try our advanced model on your own.
