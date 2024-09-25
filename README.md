@@ -102,7 +102,7 @@
 
 We provide our checkpoints at [Huggingface](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff)
 
-| Model | Link | Size | Visual Encoder | LLM-Type | Intermidiate Model 
+| Model | Link | Size | Visual Encoder | LLM-Type | Intermediate Model 
 |:---:|:---:|:---:|:---:|:---:| :---:| 
 Oryx-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2-7B](https://huggingface.co/Qwen/Qwen2-7B) | [Oryx-7B-Image](https://huggingface.co/THUdyh/Oryx-7B-Image)
 Oryx-34B | [Huggingface](https://huggingface.co/THUdyh/Oryx-34B) | 34B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Yi-1.5-34B](https://huggingface.co/01-ai/Yi-1.5-34B) | [Oryx-34B-Image](https://huggingface.co/THUdyh/Oryx-34B-Image)
