@@ -32,10 +32,13 @@
 **Oryx SFT Data**: Collected from open-source datasets, prepared data comming soon
 
 ## 📢 News
+
 - [26/09/2024] 🎨Try out our [online demo](https://huggingface.co/spaces/THUdyh/Oryx) with **Oryx-7B** for image/video understanding! 
-- [24/09/2024] 🚀 **Oryx-34B** is now available at [VideoMME](https://video-mme.github.io/home_page.html#leaderboard) Leaderboard, establishing itself as a powerful video understanding model, achieving stronger performance than 72B MLLMs and a series of ~40B MLLMs.
+
+- [24/09/2024] 🚀 **Oryx-34B** is now available at [VideoMME](https://video-mme.github.io/home_page.html#leaderboard) Leaderboard, Oryx-34B achieves best accuracy among <40B MLLMs.
 
 - [23/09/2024] 🔥 **Oryx** ranks 1st on [MLVU](https://github.com/JUNJIE99/MLVU?tab=readme-ov-file#trophy-mini-leaderboard), surpassing GPT-4o. Stay tuned for more results!
+
 - [20/09/2024] 🔥 **🚀Introducing [Oryx](https://oryx-mllm.github.io)!** The Oryx models (7B/34B) support **on-demand visual perception**, achieve new state-of-the-art performance across image, video and 3D benchmarks, even surpassing advanced commercial models on some benchmarks.
   * [[Paper]](https://arxiv.org/abs/2409.12961): Detailed introduction of on-demand visual perception, including **native resolution perception** and **dynamic compressor**! 
   * [[Checkpoints]](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff): Try our advanced model on your own.
