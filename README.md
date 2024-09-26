@@ -11,8 +11,8 @@
     <a href='https://github.com/dongyh20/' target='_blank'>Yuhao Dong<sup>*,2,3</sup></a>&emsp;
     <a href='https://liuziwei7.github.io/' target='_blank'>Ziwei Liu<sup>3</sup></a>&emsp;
     Winston Hu<sup>2</sup></a>&emsp;
-	<a href='https://scholar.google.com/citations?user=TN8uDQoAAAAJ' target='_blank'>Jiwen Lu<sup>1,&#x2709</sup></a>
-  <a href='https://raoyongming.github.io/' target='_blank'>Yongming Rao<sup>2,1,&#x2709</sup></a>&emsp;
+    <a href='https://scholar.google.com/citations?user=TN8uDQoAAAAJ' target='_blank'>Jiwen Lu<sup>1,&#x2709</sup></a>&emsp;
+   <a href='https://raoyongming.github.io/' target='_blank'>Yongming Rao<sup>2,1,&#x2709</sup></a>&emsp;
 </p>
 
 <p align="left"><sup>1</sup>Tsinghua University &ensp; <sup>2</sup>Tencent&ensp; <sup>3</sup>S-Lab, NTU&ensp; </p>
