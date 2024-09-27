@@ -11,7 +11,7 @@ from PIL import Image
 from oryx.conversation import conv_templates, SeparatorStyle
 from oryx.model.builder import load_pretrained_model
 from oryx.utils import disable_torch_init
-from oryx.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria, process_anyres_video_genli
+from oryx.mm_utils import tokenizer_image_token, get_model_name_from_path, KeywordsStoppingCriteria, process_anyres_video_genli, process_anyres_highres_image_genli
 from oryx.constants import IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, IMAGE_TOKEN_INDEX
 
 from decord import VideoReader, cpu
@@ -99,18 +99,13 @@ def eval_model(args):
         tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name, device_map="auto", overwrite_config=overwrite_config)
     model.to('cuda').eval()
 
-    video_file = "video.mp4"
-    vr = VideoReader(video_file, ctx=cpu(0))
-    total_frame_num = len(vr)
-    fps = round(vr.get_avg_fps())
-    uniform_sampled_frames = np.linspace(0, total_frame_num - 1, args.frames_upbound, dtype=int)
-    frame_idx = uniform_sampled_frames.tolist()
-    spare_frames = vr.get_batch(frame_idx).asnumpy()
-    video = [Image.fromarray(frame) for frame in spare_frames]
+    image_file = "image.png"
+    visual = Image.open(image_file)
+    image_sizes = [visual.size]
 
     args.conv_mode = "qwen_1_5"
     
-    question = "Describe the video in detail."
+    question = "Describe this image."
     question = "<image>\n" + question
 
     conv = conv_templates[args.conv_mode].copy()
@@ -123,35 +118,32 @@ def eval_model(args):
     elif '34b' in model_path:
         input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors="pt").unsqueeze(0).to('cuda:0')
 
-    video_processed = []
-    for idx, frame in enumerate(video):
-        image_processor.do_resize = False
-        image_processor.do_center_crop = False
-        frame = process_anyres_video_genli(frame, image_processor)
+    image_tensor, image_highres_tensor = [], []
+    image_processor.do_resize = False
+    image_processor.do_center_crop = False
 
-        if frame_idx is not None and idx in frame_idx:
-            video_processed.append(frame.unsqueeze(0))
-        elif frame_idx is None:
-            video_processed.append(frame.unsqueeze(0))
+    image_tensor_, image_highres_tensor_ = process_anyres_highres_image_genli(visual, image_processor)
+
+    image_tensor.append(image_tensor_)
+    image_highres_tensor.append(image_highres_tensor_)
+
+    image_tensor = torch.stack(image_tensor, dim=0)
+    image_highres_tensor = torch.stack(image_highres_tensor, dim=0)
+
+    image_tensor = image_tensor.to(dtype=torch.bfloat16, device=self.device)
+    image_highres_tensor = image_highres_tensor.to(dtype=torch.bfloat16, device=self.device)
     
-    if frame_idx is None:
-        frame_idx = np.arange(0, len(video_processed), dtype=int).tolist()
-    
-    video_processed = torch.cat(video_processed, dim=0).bfloat16().cuda()
-    video_processed = (video_processed, video_processed)
-
-    video_data = (video_processed, (384, 384), "video")
-
     stop_str = conv.sep if conv.sep_style != SeparatorStyle.TWO else conv.sep2
     keywords = [stop_str]
     stopping_criteria = KeywordsStoppingCriteria(keywords, tokenizer, input_ids)
 
     with torch.inference_mode():
-        output_ids = model.generate(
-            inputs=input_ids,
-            images=video_data[0][0],
-            images_highres=video_data[0][1],
-            modalities=video_data[2],
+        output_ids = self.model.generate(
+            input_ids,
+            modalities=['image'],
+            images=image_tensor,
+            images_highres=image_highres_tensor,
+            image_sizes=image_sizes,
             do_sample=True if args.temperature > 0 else False,
             temperature=args.temperature,
             top_p=args.top_p,
