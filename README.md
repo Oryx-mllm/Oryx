@@ -32,6 +32,7 @@
 **Oryx SFT Data**: Collected from open-source datasets, prepared data comming soon
 
 ## 📢 News
+- [30/09/2024] 📊[Video data](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) for SFT is released!
 
 - [26/09/2024] 🎨Try out our [online demo](https://huggingface.co/spaces/THUdyh/Oryx) with **Oryx-7B** for image/video understanding! 
 
