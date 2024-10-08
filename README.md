@@ -70,7 +70,7 @@
  - [x] Demo code for generation.
  - [x] All the training and inference code.
  - [x] Evaluation code for image, video and 3D multi-modal benchmark.
- - [ ] Oryx SFT Data.
+ - [x] Oryx SFT Data.
  - [x] Oryx Gradio chatbox. 
  - [ ] Enhanced Oryx model with latest LLM base models and better SFT data.
  - [ ] Introducing our explorations for OryxViT.
