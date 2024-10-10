@@ -1,4 +1,5 @@
 import re
+import os
 import argparse
 import torch
 import math
@@ -15,6 +16,12 @@ from oryx.mm_utils import tokenizer_image_token, get_model_name_from_path, Keywo
 from oryx.constants import IGNORE_INDEX, DEFAULT_IMAGE_TOKEN, IMAGE_TOKEN_INDEX
 
 from decord import VideoReader, cpu
+
+if 'EVAL_LARGE' in os.environ:
+    print("EVAL_LARGE is set")
+    EVAL_LARGE = True
+else:
+    EVAL_LARGE = False
 
 
 def split_list(lst, n):
@@ -97,9 +104,12 @@ def eval_model(args):
         tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name, device_map="cuda:0", overwrite_config=overwrite_config)
     elif '34b' in model_path:
         tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name, device_map="auto", overwrite_config=overwrite_config)
-    model.to('cuda').eval()
+    if EVAL_LARGE:
+        model.eval()
+    else:
+        model.to('cuda').eval()
 
-    video_file = "video.mp4"
+    video_file = ""
     vr = VideoReader(video_file, ctx=cpu(0))
     total_frame_num = len(vr)
     fps = round(vr.get_avg_fps())

@@ -3,6 +3,13 @@ import torch.nn as nn
 import math
 import torch.nn.functional as F
 
+import os
+if 'EVAL_LARGE' in os.environ:
+    print("EVAL_LARGE is set")
+    EVAL_LARGE = True
+else:
+    EVAL_LARGE = False
+
 class DynamicCompressor(nn.Module):
     def __init__(self, model_args, vision_tower):
         super().__init__()
@@ -45,6 +52,10 @@ class DynamicCompressor(nn.Module):
 
         image_features_pool = image_features_pool.flatten(2).permute(0, 2, 1) # T, H*W, C
         new_t, new_p, _ = image_features_pool.shape
+
+        if EVAL_LARGE:
+            image_features_pool = image_features_pool.to(self.vlm_query_projector.weight.device)
+            image_feature_attn = image_feature_attn.to(self.vlm_key_projector.weight.device)
 
         image_query = self.vlm_query_projector(image_features_pool).reshape(new_t*new_p, self.mid_channel)
         image_key = self.vlm_key_projector(image_feature_attn).reshape(new_t*new_p, -1, self.mid_channel)

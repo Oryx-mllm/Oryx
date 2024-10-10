@@ -6,4 +6,6 @@ export MINRES=0
 export VIDEO_MAXRES=480
 export VIDEO_MINRES=288
 
-CUDA_VISIBLE_DEVICES=0 python inference.py
+export EVAL_LARGE=1
+
+python inference.py

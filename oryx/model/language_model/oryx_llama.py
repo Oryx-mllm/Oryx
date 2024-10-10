@@ -54,6 +54,7 @@ class OryxLlamaForCausalLM(LlamaForCausalLM, OryxMetaForCausalLM):
         image_sizes: Optional[List[List[int]]] = None,
         return_dict: Optional[bool] = None,
         modalities: Optional[List[str]] = ["image"],
+        cache_position=None,
     ) -> Union[Tuple, CausalLMOutputWithPast]:
 
 
@@ -145,10 +146,11 @@ class OryxLlamaForCausalLM(LlamaForCausalLM, OryxMetaForCausalLM):
         self,
         inputs: Optional[torch.Tensor] = None,
         images: Optional[torch.Tensor] = None,
+        images_highres: Optional[List[torch.FloatTensor]] = None,
         image_sizes: Optional[torch.Tensor] = None,
+        modalities: Optional[List[str]] = ["image"],
         **kwargs,
     ) -> Union[GenerateOutput, torch.LongTensor]:
-        modalities = kwargs.pop("modalities", None)
         position_ids = kwargs.pop("position_ids", None)
         attention_mask = kwargs.pop("attention_mask", None)
         if "inputs_embeds" in kwargs:
@@ -170,7 +172,7 @@ class OryxLlamaForCausalLM(LlamaForCausalLM, OryxMetaForCausalLM):
                 None,
                 images,
                 modalities,
-                image_sizes=image_sizes
+                image_sizes=image_sizes, images_highres=images_highres
             )
         else:
             inputs_embeds = self.get_model().embed_tokens(inputs)
@@ -179,6 +181,7 @@ class OryxLlamaForCausalLM(LlamaForCausalLM, OryxMetaForCausalLM):
             position_ids=position_ids,
             attention_mask=attention_mask,
             inputs_embeds=inputs_embeds,
+            eos_token_id=7, # <|im_end|>
             **kwargs
         )
 

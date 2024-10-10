@@ -44,6 +44,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 import os
+if 'EVAL_LARGE' in os.environ:
+    print("EVAL_LARGE is set")
+    EVAL_LARGE = True
+else:
+    EVAL_LARGE = False
 
 def _no_grad_trunc_normal_(tensor, mean, std, a, b):
     # Cut & paste from PyTorch official master until it's in a few official releases - RW
@@ -563,6 +568,8 @@ class VisionTransformer(nn.Module):
         x_all = []
         image_sizes = []
         for x in x_list:
+            if EVAL_LARGE:
+                x = x.to('cuda:0')
             bs, _, h, w = x.shape
 
             # fix patch size=14 in datasets 
@@ -599,6 +606,8 @@ class VisionTransformer(nn.Module):
         return feats, image_sizes
 
     def forward_features(self, x: torch.Tensor) -> torch.Tensor:
+        if EVAL_LARGE:
+            x = x.to('cuda:0')
         bs, _, h, w = x.shape
         h = h // self.patch_embed.patch_size[0]
         w = w // self.patch_embed.patch_size[1]
