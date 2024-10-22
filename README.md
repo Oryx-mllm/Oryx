@@ -23,7 +23,7 @@
 
 **Project Page:** [![oryx-project-page](https://img.shields.io/badge/oryx-project_page-red)](https://oryx-mllm.github.io) 
 
-**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/2409.12961) 
+**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/2409.12961v2) 
 
 **Demo by Gradio**: [![Static Badge](https://img.shields.io/badge/oryx-demo-yellow)](https://huggingface.co/spaces/THUdyh/Oryx) 
 
@@ -32,7 +32,9 @@
 **Oryx SFT Data**: [![oryx-SFT-Data](https://img.shields.io/badge/oryx-Data-purple)](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) 
 
 ## 📢 News
-- [30/09/2024] 📊[Video data](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) for SFT is released!
+- [23/10/2024] 🎉Oryx-1.5 Series is released! Oryx-1.5 includes [7B](https://huggingface.co/THUdyh/Oryx-1.5-7B) and [32B](https://huggingface.co/THUdyh/Oryx-1.5-32B) variants. We achieve stronger performance on all the benchmarks! Check our results at [VideoMME](https://video-mme.github.io/home_page.html#leaderboard) Leaderboard and the updated [arXiv paper](https://arxiv.org/abs/2409.12961v2).
+
+- [30/09/2024] 📊[Oryx video data](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) for SFT is released!
 
 - [26/09/2024] 🎨Try out our [online demo](https://huggingface.co/spaces/THUdyh/Oryx) with **Oryx-7B** for image/video understanding! 
 
@@ -112,8 +114,10 @@ We provide our checkpoints at [Huggingface](https://huggingface.co/collections/T
 
 | Model | Link | Size | Visual Encoder | LLM-Type | Intermediate Model 
 |:---:|:---:|:---:|:---:|:---:| :---:| 
-Oryx-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2-7B](https://huggingface.co/Qwen/Qwen2-7B) | [Oryx-7B-Image](https://huggingface.co/THUdyh/Oryx-7B-Image)
+Oryx-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2-7B](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | [Oryx-7B-Image](https://huggingface.co/THUdyh/Oryx-7B-Image)
 Oryx-34B | [Huggingface](https://huggingface.co/THUdyh/Oryx-34B) | 34B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Yi-1.5-34B](https://huggingface.co/01-ai/Yi-1.5-34B) | [Oryx-34B-Image](https://huggingface.co/THUdyh/Oryx-34B-Image)
+Oryx-1.5-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | -
+Oryx-1.5-32B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-32B) | 32B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct) | -
 
 
 ## Generation Demo
@@ -124,7 +128,7 @@ You can try the generation results of our strong Oryx model with the following s
 
 #### 2. Download the [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) vision encoder.
 
-#### 3. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT. (We will simplify step 1, 2 and 3 in an automatically manner soon.)
+#### 3. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT.
 
 #### 4. Modify the model path and run the inference script with your own video to test our model.
 
@@ -136,7 +140,7 @@ python inference.py
 You can evaluate our model with the following steps:
 #### 1. Download the [Oryx](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) model from our huggingface collections. 
 #### 2. Download the [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) vision encoder.
-#### 3. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT. (We will simplify step 1, 2 and 3 in an automatically manner soon.)
+#### 3. Replace the path for "mm_vision_tower" in the config.json with your local path for Oryx-ViT.
 #### 4. Install the provided lmms-eval folder.
 ```python
 cd ./lmms-eval
