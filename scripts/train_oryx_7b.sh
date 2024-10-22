@@ -2,6 +2,7 @@
 export PYTHONPATH=/PATH/TO/oryx:$PYTHONPATH
 VISION_TOWER='oryx_vit:PATH/TO/oryx_vit_new.pth'
 DATA="PATH/TO/DATA.json"
+FOLDER="PATH/TO/DATA"
 MODEL_NAME_OR_PATH="PATH/TO/7B_MODEL"
 
 
@@ -25,6 +26,7 @@ torchrun  --nproc_per_node 8 --nnodes=$nnode --node_rank=$nrank --master_addr=$M
     --model_name_or_path ${MODEL_NAME_OR_PATH} \
     --version qwen_1_5 \
     --data_path ${DATA} \
+    --data_folder ${FOLDER} \
     --vision_tower $VISION_TOWER \
     --mm_projector_type simple_mlp_twoview \
     --mm_vision_select_layer -1 \

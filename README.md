@@ -29,7 +29,7 @@
 
 **Model Checkpoints**: [![oryx-checkpoints](https://img.shields.io/badge/oryx-checkpoints-blue)](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) 
 
-**Oryx SFT Data**: Collected from open-source datasets, prepared data comming soon
+**Oryx SFT Data**: [![oryx-SFT-Data](https://img.shields.io/badge/oryx-Data-purple)](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) 
 
 ## 📢 News
 - [30/09/2024] 📊[Video data](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) for SFT is released!
@@ -72,7 +72,7 @@
  - [x] Evaluation code for image, video and 3D multi-modal benchmark.
  - [x] Oryx SFT Data.
  - [x] Oryx Gradio chatbox. 
- - [ ] Enhanced Oryx model with latest LLM base models and better SFT data.
+ - [x] Enhanced Oryx model with latest LLM base models and better SFT data.
  - [ ] Introducing our explorations for OryxViT.
 
 ## 📃 Main Results

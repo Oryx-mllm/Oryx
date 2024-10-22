@@ -74,6 +74,8 @@ class ModelArguments:
 class DataArguments:
     data_path: str = field(default=None,
                            metadata={"help": "Path to the training data."})
+    data_folder: str = field(default=None,
+                             metadata={"help": "Folder to the training data."})
     lazy_preprocess: bool = False
     is_multimodal: bool = False
     video_fps: Optional[int] = field(default=1)
@@ -1064,11 +1066,11 @@ def preprocess(
     return dict(input_ids=input_ids, labels=targets)
 
 
-def read_image_patch(patch_info):
+def read_image_patch(patch_info, data_folder):
     if 'img_path' in patch_info.keys():
         image = Image.open(patch_info['img_path']).convert('RGB')
     else:
-        image_file_name = patch_info['patch']
+        image_file_name = os.path.join(data_folder, patch_info['patch'])
         start_bytes = int(patch_info['start_num'])
         file_size = int(patch_info['size'])
 
@@ -1081,11 +1083,11 @@ def read_image_patch(patch_info):
     return image
 
 
-def read_video_patch(patch_info):
+def read_video_patch(patch_info, data_folder):
     if 'img_path' in patch_info.keys():
         image = Image.open(patch_info['img_path']).convert('RGB')
     else:
-        image_file_name = patch_info['patch']
+        image_file_name = os.path.join(data_folder, patch_info['patch'])
         start_bytes = int(patch_info['start_num'])
         file_size = patch_info['size'] # list of int
         total_file_size = 0
@@ -1121,10 +1123,6 @@ class LazySupervisedDataset(Dataset):
         self.list_data_dict = list_data_dict
         self.data_args = data_args
 
-        # if PRETRAIN:
-        self.mapping_dict = json.load(open('/apdcephfs_jn/share_302244400/peterrao/nj3/data/llava/videodata/MovieNet/movienet_mapping.json', "r"))
-        print('loadding mapping dict')
-
     def __len__(self):
         return len(self.list_data_dict)
 
@@ -1152,7 +1150,7 @@ class LazySupervisedDataset(Dataset):
         if type(image_file) is str:
             image = Image.open(image_file).convert('RGB')
         elif type(image_file) is dict:
-            image = read_image_patch(image_file)
+            image = read_image_patch(image_file, self.data_args.data_folder)
         else:
             raise ValueError(f"Unknown image file type: {type(image_file)}, {image_file}")
         image_size = image.size
@@ -1161,7 +1159,7 @@ class LazySupervisedDataset(Dataset):
         return (image, image_padded), image_size, "image"
     
     def process_video(self, video_file):
-        video = read_video_patch(video_file)
+        video = read_video_patch(video_file, self.data_args.data_folder)
         video_processed = []
 
         cur_frames_upbound = self.data_args.frames_upbound
@@ -1189,7 +1187,7 @@ class LazySupervisedDataset(Dataset):
         return (video_processed, (384, 384), "video"), frame_idx
 
     def process_video_pretrain(self, video_file, target_idx):
-        video = read_video_patch(video_file)
+        video = read_video_patch(video_file, self.data_args.data_folder)
 
         cur_frames_upbound = random.randint(self.data_args.frames_upbound * 3, self.data_args.frames_upbound * 4)
         video_processed = []
@@ -1306,7 +1304,7 @@ class LazySupervisedDataset(Dataset):
                 self.data_args)
             
         elif 'video_long' in sources[0]:
-            video_file = self.mapping_dict[self.list_data_dict[i]['video_long']]['video']
+            video_file = self.list_data_dict[i]['video_long']
             video, target_idx = self.process_video_pretrain(video_file, self.list_data_dict[i]['idx'])
             video = [video]
             num_frames = len(video[0][0][0])
