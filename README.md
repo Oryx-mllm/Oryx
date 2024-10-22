@@ -170,7 +170,14 @@ pip install -e
 
 #### 3. **Prepare training data:**
 
-🚧 We will release the instruction for collecting training data soon. We will also release our prepared data in patches.
+Download training data [Here](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data)
+
+Modify the DATA and FOLDER arguments in the training scripts to your save folder.
+
+```
+DATA="PATH/TO/DATA.json"
+FOLDER="PATH/TO/DATA"
+```
 
 ### Training
 
