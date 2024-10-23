@@ -116,8 +116,8 @@ We provide our checkpoints at [Huggingface](https://huggingface.co/collections/T
 |:---:|:---:|:---:|:---:|:---:| :---:| 
 Oryx-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2-7B](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | [Oryx-7B-Image](https://huggingface.co/THUdyh/Oryx-7B-Image)
 Oryx-34B | [Huggingface](https://huggingface.co/THUdyh/Oryx-34B) | 34B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Yi-1.5-34B](https://huggingface.co/01-ai/Yi-1.5-34B) | [Oryx-34B-Image](https://huggingface.co/THUdyh/Oryx-34B-Image)
-Oryx-1.5-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | -
-Oryx-1.5-32B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-32B) | 32B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct) | -
+Oryx-1.5-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | Coming Soon
+Oryx-1.5-32B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-32B) | 32B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct) | Coming Soon
 
 
 ## Generation Demo
