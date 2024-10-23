@@ -37,7 +37,7 @@ def get_chunk(lst, n, k):
 def preprocess_qwen(sources, tokenizer: transformers.PreTrainedTokenizer, has_image: bool = False, max_len=2048, system_message: str = "You are a helpful assistant.") -> Dict:
     roles = {"human": "<|im_start|>user", "gpt": "<|im_start|>assistant"}
 
-    im_start, im_end = tokenizer.additional_special_tokens_ids
+    im_start, im_end = tokenizer.additional_special_tokens_ids[:2]
     nl_tokens = tokenizer("\n").input_ids
     _system = tokenizer("system").input_ids + nl_tokens
     _user = tokenizer("user").input_ids + nl_tokens
