@@ -139,10 +139,7 @@ def eval_model(args):
         image_processor.do_center_crop = False
         frame = process_anyres_video_genli(frame, image_processor)
 
-        if frame_idx is not None and idx in frame_idx:
-            video_processed.append(frame.unsqueeze(0))
-        elif frame_idx is None:
-            video_processed.append(frame.unsqueeze(0))
+        video_processed.append(frame.unsqueeze(0))
     
     if frame_idx is None:
         frame_idx = np.arange(0, len(video_processed), dtype=int).tolist()
