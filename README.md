@@ -174,14 +174,16 @@ pip install -e
 
 #### 3. **Prepare training data:**
 
-Download training data [Here](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data)
+Please download training data from our [huggingface](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data).
 
 Modify the DATA and FOLDER arguments in the training scripts to your save folder.
 
 ```
-DATA="PATH/TO/DATA.json"
-FOLDER="PATH/TO/DATA"
+DATA="PATH/TO/Oryx-SFT-Data/data.json"
+FOLDER="PATH/TO/Oryx-SFT-Data"
 ```
+
+If you are interested in our long-form training data, you can download `movienet_data.json` and `movienet_patch` and mix appropriate quantity (we recommand 30k) with the main training data. 
 
 ### Training
 
@@ -192,7 +194,7 @@ Modify the following lines in the scripts at your own environments:
 ```bash
 export PYTHONPATH=/PATH/TO/oryx:$PYTHONPATH
 VISION_TOWER='oryx_vit:PATH/TO/oryx_vit_new.pth'
-DATA="PATH/TO/DATA.json"
+DATA="PATH/TO/Oryx-SFT-DATA/data.json"
 MODEL_NAME_OR_PATH="PATH/TO/7B_MODEL"
 ```
 
