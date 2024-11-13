@@ -16,6 +16,8 @@ from typing import (
     Union,
 )
 
+from huggingface_hub import snapshot_download
+
 from torch.utils.checkpoint import checkpoint
 import torch
 import torch.nn as nn
@@ -752,13 +754,8 @@ def create_siglip_vit(
     else:
         print(f"Warning: Model checkpoint not found at {path}")
         print("Try to download from Hugging Face model hub")
-        # ckpt = "https://huggingface.co/THUdyh/Oryx-ViT/blob/main/oryx_vit.pth"
-        hf_module = "THUdyh/Oryx-ViT"
-        from huggingface_hub import snapshot_download
-        path = snapshot_download(repo_id=hf_module)
+        path = snapshot_download(repo_id="THUdyh/Oryx-ViT")
         ckpt = os.path.join(path, "oryx_vit.pth")
-        # print(f"Loading model from {path}")
-        # state_dict = torch.hub.load_state_dict_from_url(ckpt, map_location="cpu")
 
     print('loading vision backbone from', ckpt)
 
