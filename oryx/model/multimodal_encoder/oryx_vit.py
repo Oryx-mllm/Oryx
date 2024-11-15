@@ -16,6 +16,8 @@ from typing import (
     Union,
 )
 
+from huggingface_hub import snapshot_download
+
 from torch.utils.checkpoint import checkpoint
 import torch
 import torch.nn as nn
@@ -750,9 +752,14 @@ def create_siglip_vit(
     if path is not None and os.path.exists(path):
         ckpt = path
     else:
-        raise ValueError(f"Model checkpoint not found at {path}")
+        print(f"Warning: Model checkpoint not found at {path}")
+        print("Try to download from Hugging Face model hub")
+        path = snapshot_download(repo_id="THUdyh/Oryx-ViT")
+        ckpt = os.path.join(path, "oryx_vit.pth")
+
+    print('loading vision backbone from', ckpt)
+
     state_dict = torch.load(ckpt, map_location="cpu")
-    print('loading vision backbone from', path)
 
     msg = model.load_state_dict(state_dict, strict=False)
     print(msg)

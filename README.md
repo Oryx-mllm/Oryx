@@ -167,7 +167,7 @@ cd oryx
 conda create -n oryx python=3.10 -y
 conda activate oryx
 pip install --upgrade pip
-pip install -e
+pip install -e .
 ```
 
 ### Preparation
