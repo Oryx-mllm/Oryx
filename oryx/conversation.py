@@ -373,7 +373,7 @@ conv_llava_llama_3 = Conversation(
     messages=[],
     offset=0,
     sep_style=SeparatorStyle.LLAMA_3,
-    tokenizer=AutoTokenizer.from_pretrained("/apdcephfs_jn/share_302244400/peterrao/nj3/models/Llama-3-8B-Instruct"),
+    tokenizer=AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B-Instruct"),
     stop_token_ids=[128009],
 )
 
