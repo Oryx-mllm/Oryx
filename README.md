@@ -32,7 +32,7 @@
 **Oryx SFT Data**: [![oryx-SFT-Data](https://img.shields.io/badge/oryx-Data-purple)](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) 
 
 ## 📢 News
-- [23/1/2025] 🎉**Oryx** is accepted to ICLR 2025!
+- [23/1/2025] 🎉**Oryx** has been accepted to ICLR 2025!
 - [23/10/2024] 🎉Oryx-1.5 Series is released! Oryx-1.5 includes [7B](https://huggingface.co/THUdyh/Oryx-1.5-7B) and [32B](https://huggingface.co/THUdyh/Oryx-1.5-32B) variants. We achieve stronger performance on all the benchmarks! Check our results at [VideoMME](https://video-mme.github.io/home_page.html#leaderboard) Leaderboard and the updated [arXiv paper](https://arxiv.org/abs/2409.12961v2).
 - [30/09/2024] 📊[Oryx video data](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) for SFT is released!
 - [26/09/2024] 🎨Try out our [online demo](https://huggingface.co/spaces/THUdyh/Oryx) with **Oryx-7B** for image/video understanding! 
