@@ -27,21 +27,17 @@
 
 **Demo by Gradio**: [![Static Badge](https://img.shields.io/badge/oryx-demo-yellow)](https://huggingface.co/spaces/THUdyh/Oryx) 
 
-**Model Checkpoints**: [![oryx-checkpoints](https://img.shields.io/badge/oryx-checkpoints-blue)](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff) 
+**Model Checkpoints**: [![oryx-checkpoints](https://img.shields.io/badge/oryx-checkpoints-blue)](https://huggingface.co/collections/THUdyh/oryx-15-6718c60763845525c2bba71d) 
 
 **Oryx SFT Data**: [![oryx-SFT-Data](https://img.shields.io/badge/oryx-Data-purple)](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) 
 
 ## 📢 News
+- [23/1/2025] 🎉**Oryx** is accepted to ICLR 2025!
 - [23/10/2024] 🎉Oryx-1.5 Series is released! Oryx-1.5 includes [7B](https://huggingface.co/THUdyh/Oryx-1.5-7B) and [32B](https://huggingface.co/THUdyh/Oryx-1.5-32B) variants. We achieve stronger performance on all the benchmarks! Check our results at [VideoMME](https://video-mme.github.io/home_page.html#leaderboard) Leaderboard and the updated [arXiv paper](https://arxiv.org/abs/2409.12961v2).
-
 - [30/09/2024] 📊[Oryx video data](https://huggingface.co/datasets/THUdyh/Oryx-SFT-Data) for SFT is released!
-
 - [26/09/2024] 🎨Try out our [online demo](https://huggingface.co/spaces/THUdyh/Oryx) with **Oryx-7B** for image/video understanding! 
-
 - [24/09/2024] 🚀 **Oryx-34B** is now available at [VideoMME](https://video-mme.github.io/home_page.html#leaderboard) Leaderboard, Oryx-34B achieves best accuracy among <40B MLLMs.
-
 - [23/09/2024] 🔥 **Oryx** ranks 1st on [MLVU](https://github.com/JUNJIE99/MLVU?tab=readme-ov-file#trophy-mini-leaderboard), surpassing GPT-4o. Stay tuned for more results!
-
 - [20/09/2024] 🔥 **🚀Introducing [Oryx](https://oryx-mllm.github.io)!** The Oryx models (7B/34B) support **on-demand visual perception**, achieve new state-of-the-art performance across image, video and 3D benchmarks, even surpassing advanced commercial models on some benchmarks.
   * [[Paper]](https://arxiv.org/abs/2409.12961): Detailed introduction of on-demand visual perception, including **native resolution perception** and **dynamic compressor**! 
   * [[Checkpoints]](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff): Try our advanced model on your own.
@@ -112,12 +108,12 @@
 
 We provide our checkpoints at [Huggingface](https://huggingface.co/collections/THUdyh/oryx-66ebe5d0cfb61a2837a103ff)
 
-| Model | Link | Size | Visual Encoder | LLM-Type | Intermediate Model 
-|:---:|:---:|:---:|:---:|:---:| :---:| 
-Oryx-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2-7B](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | [Oryx-7B-Image](https://huggingface.co/THUdyh/Oryx-7B-Image)
-Oryx-34B | [Huggingface](https://huggingface.co/THUdyh/Oryx-34B) | 34B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Yi-1.5-34B](https://huggingface.co/01-ai/Yi-1.5-34B) | [Oryx-34B-Image](https://huggingface.co/THUdyh/Oryx-34B-Image)
-Oryx-1.5-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | Coming Soon
-Oryx-1.5-32B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-32B) | 32B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct) | Coming Soon
+| Model | Link | Size | Visual Encoder | LLM-Type | Intermediate Model |
+|:---:|:---:|:---:|:---:|:---:| :---:|
+|Oryx-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2-7B](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | [Oryx-7B-Image](https://huggingface.co/THUdyh/Oryx-7B-Image)|
+|Oryx-34B | [Huggingface](https://huggingface.co/THUdyh/Oryx-34B) | 34B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Yi-1.5-34B](https://huggingface.co/01-ai/Yi-1.5-34B) | [Oryx-34B-Image](https://huggingface.co/THUdyh/Oryx-34B-Image)|
+|Oryx-1.5-7B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-7B) | 7B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) | [Oryx-1.5-7B-Image](https://huggingface.co/THUdyh/Oryx-1.5-Image) |
+|Oryx-1.5-32B | [Huggingface](https://huggingface.co/THUdyh/Oryx-1.5-32B) | 32B | [Oryx-ViT](https://huggingface.co/THUdyh/Oryx-ViT) | [Qwen-2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct) | [Oryx-1.5-32B-Image](https://huggingface.co/THUdyh/Oryx-1.5-32B-Image) |
 
 
 ## Generation Demo
