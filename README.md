@@ -23,7 +23,7 @@
 
 **Project Page:** [![oryx-project-page](https://img.shields.io/badge/oryx-project_page-red)](https://oryx-mllm.github.io) 
 
-**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/2409.12961v2) 
+**arXiv Paper:** [![Static Badge](https://img.shields.io/badge/oryx-paper-green)](https://arxiv.org/abs/2409.12961) 
 
 **Demo by Gradio**: [![Static Badge](https://img.shields.io/badge/oryx-demo-yellow)](https://huggingface.co/spaces/THUdyh/Oryx) 
 
