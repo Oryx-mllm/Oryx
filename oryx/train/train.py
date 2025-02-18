@@ -1109,6 +1109,17 @@ def read_video_patch(patch_info, data_folder):
                 total_file_size += int(file_size[idx])
     return images_all
 
+
+def read_video_file(file_path):
+    from decord import VideoReader, cpu
+    vr = VideoReader(file_path, ctx=cpu(0))
+    total_frame_num = len(vr)
+    frame_idx = np.arange(0, total_frame_num, dtype=int).tolist()
+    spare_frames = vr.get_batch(frame_idx).asnumpy()
+    video = [Image.fromarray(frame) for frame in spare_frames]
+    return video
+
+
 class LazySupervisedDataset(Dataset):
     """Dataset for supervised fine-tuning."""
 
@@ -1159,7 +1170,10 @@ class LazySupervisedDataset(Dataset):
         return (image, image_padded), image_size, "image"
     
     def process_video(self, video_file):
-        video = read_video_patch(video_file, self.data_args.data_folder)
+        if isinstance(video_file, str):
+            video = read_video_file(video_file)
+        else:
+            video = read_video_patch(video_file)
         video_processed = []
 
         cur_frames_upbound = self.data_args.frames_upbound
